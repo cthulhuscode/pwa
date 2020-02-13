@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: black;
+    color: beige;
+    text-align: center;    
+    font-size: 40px;
+    padding: 30px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#carrusel{
+    background-color: rgba(223, 223, 223, 0.589);
+    background-color: black;
+    display: block;
+}
+
+#imagen img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 400px;
+
+}
+
+.boton{
+    background-color:  rgba(177, 177, 177, 0.514);
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    font-style: bold;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.boton:hover{
+    background-color: rgb(131, 131, 131);
+}
+
+#back{
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 7%;
+}
+
+#next{
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 86%;    
+}
+
+#table{
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+
+
+table, th, td{
+    margin: 0 auto;
+    font-family: Arial;
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+}
+
+table{
+    margin-top: 50px;
+    width: 80%;
+}
+
+th{
+    font-size: 18px;
+    background-color: #ec407a    ;
+    padding: 3% 4% 3% 3%;
+    text-align: center;
+    border-color: #b4004e;
+}
+
+td{
+    padding: 1.5% 5px 1.5% 5px;
+}
+
+tr{
+    background-color: #fce4ec;
+    transition: all 300ms;
+}
+
+tr:hover{
+    background-color: #f8bbd0;
+}
