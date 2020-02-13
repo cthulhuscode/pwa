@@ -19,11 +19,14 @@
 
     <!--Estilos-->
     <script src="main.js"></script>
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/c3e884d364.js" crossorigin="anonymous"></script>
     
     <title>Carrusel de imágenes</title>
 </head>
 <body>
-    <h1>Carrusel de imágenes</h1>
+    <h1>Carrusel de </h1>
     <div id="carrusel">
         <div class="boton" id="next">
             &#62
@@ -37,29 +40,54 @@
             <img src="img/1.jpg" id="img">
         </div>
     </div>
-    <span>José Enrique Ruvalcaba Segura 4°D</span>
-    <p></p>
 
-    <hr>
+    <div id="texto">
+        <span>José Enrique Ruvalcaba Segura 4°D</span>
+        <p></p>    
+    </div>   
+
+    <div id="formulario">
+        <h3>Agregar dios lovecraftiano</h3>
+        <br>
+        <form action="#" id="formu">
+            <label for="">Nombre</label>
+            <input type="text" id="nombre">
+            <label for="">Género</label>
+            <input type="text" id="genero">
+            <label for="">Clase</label>
+            <input type="text" id="clase">
+            <label for="">Culto</label>
+            <input type="text" id="culto">
+            <label for="">Armas</label>
+            <input type="text" id="armas">
+            <button type="submit" id="agregar">Agregar</button>        
+        </form>
+    </div>
 
     <div id="table">
-        <table>
+        <table id="tabla">
             <caption>Dioses lovecraftianos</caption>
             <tr>
+                <th>id</th>
                 <th>Nombre</th>
                 <th>Género</th>
                 <th>Clase</th>
                 <th>Culto</th>
                 <th>Armas</th>
+                <th id="eliminar">Eliminar</th>
             </tr>
             <tr>
-                <td>Cthulhu</td>
+                <td>id</td>
                 <td>Masculino</td>
                 <td>Primigenio</td>
                 <td>Humanos (tribus)</td>
                 <td>Tentáculos, garras y ataques mentales</td>
+                <td id="eliminar"><i class="far fa-trash-alt"></i></td>
             </tr>
         </table>
     </div>
 </body>
+<footer>
+    xd
+</footer>
 </html>

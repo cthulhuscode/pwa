@@ -15,7 +15,6 @@ urlsToCache = [
     './img/4.jpg',
     './img/5.jpg',
     './img/6.jpg',
-    'sw.js'
 ];
 
 //Eventos del ServiceWorker
@@ -39,7 +38,7 @@ self.addEventListener('active', e => {
     const cacheWhiteList = [CACHE_NAME];
 
     //Detectar que archivos han sufrido un cambio
-    e.waitUntill(
+    e.skipWaiting(
         //Ver las llaves de los archivos que han sido modificados
         caches.keys()
         .then(cachesNames => {
@@ -65,7 +64,7 @@ self.addEventListener('fetch', e => {
         .then(function(res) {
             return res || fetch(e.request).then(function(response){
                 return caches.open('v1_carrusel').then(function(cache){
-                    cache.put(e.request, response.clone());
+                    //cache.put(e.request, response.clone());
                     return response;
                 })
             })
