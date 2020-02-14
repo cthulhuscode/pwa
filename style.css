@@ -71,23 +71,22 @@ h1{
     margin: 0 auto;
 }
 
-
-
 table, th, td{
     margin: 0 auto;
     font-family: Arial;
-    border: 2px solid #ccc;
+    border: 2px solid #f1f8e9;
     border-collapse: collapse;
 }
 
 table{
     margin-top: 50px;
     width: 80%;
+    box-shadow: 1px 1px 15px #ccc;
 }
 
 th{
     font-size: 18px;
-    background-color: #f8bbd0    ;
+    background-color: #00b248    ;
     padding: 3% 4% 3% 2%;
     text-align: center;
     border-color: aliceblue;
@@ -98,12 +97,12 @@ td{
 }
 
 tr{
-    background-color:#ccc;
+    background-color:#f1f8e9;
     transition: all 300ms;
 }
 
 tr:hover{
-    background-color: #f8bbd0;
+    background-color: #dcedc8;
 }
 
 #eliminar{
@@ -126,13 +125,14 @@ tr:hover{
 
 #formulario{
     font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid #ccc;
+    border: 1px solid #a5d6a7;
     margin: 0 auto;
     margin-top: 60px;
     width: 50%;
     padding: 20px;
     padding-right: 40px;
-    box-shadow: 1px 1px 18px bisque;
+    box-shadow: 1px 1px 18px #ccc;
+    max-width: 550px;
 }
 
 input[type="text"]{
@@ -147,11 +147,12 @@ input[type="text"]{
 }
 
 input[type="text"]:hover{
-    background-color: beige;
+    background-color: whitesmoke;
+    border: 1px solid #009624;
 }
 
 button{
-    background-color: #f8bbd0;
+    background-color: #a5d6a7;
     border: none;
     padding: 15px;
     transition: all 300ms;
@@ -159,7 +160,19 @@ button{
 }
 
 button:hover{
-    background-color: #ec407a;
+    background-color: #75a478;
+}
+
+#divEliminar{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #a5d6a7;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 50%;
+    padding: 20px;
+    padding-right: 40px;
+    box-shadow: 1px 1px 18px #ccc;
+    max-width: 550px;
 }
 
 footer{

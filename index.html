@@ -26,14 +26,14 @@
     <title>Carrusel de imágenes</title>
 </head>
 <body>
-    <h1>Carrusel de </h1>
+    <h1>Carrusel de imágenes</h1>
     <div id="carrusel">
         <div class="boton" id="next">
-            &#62
+            &#62;
         </div>
 
         <div class="boton" id="back">
-            &#60
+            &#60;
         </div>
 
         <div id="imagen">
@@ -50,16 +50,18 @@
         <h3>Agregar dios lovecraftiano</h3>
         <br>
         <form action="#" id="formu">
+            <label for="">id</label>
+            <input type="text" id="codigo" required>
             <label for="">Nombre</label>
-            <input type="text" id="nombre">
+            <input type="text" id="nombre" required>
             <label for="">Género</label>
-            <input type="text" id="genero">
+            <input type="text" id="genero" required>
             <label for="">Clase</label>
-            <input type="text" id="clase">
+            <input type="text" id="clase" required>
             <label for="">Culto</label>
-            <input type="text" id="culto">
+            <input type="text" id="culto" required>
             <label for="">Armas</label>
-            <input type="text" id="armas">
+            <input type="text" id="armas" required>
             <button type="submit" id="agregar">Agregar</button>        
         </form>
     </div>
@@ -74,20 +76,33 @@
                 <th>Clase</th>
                 <th>Culto</th>
                 <th>Armas</th>
-                <th id="eliminar">Eliminar</th>
             </tr>
+            <!--
             <tr>
-                <td>id</td>
+                <td>1</td>
+                <td>Cthulhu</td>
                 <td>Masculino</td>
                 <td>Primigenio</td>
                 <td>Humanos (tribus)</td>
                 <td>Tentáculos, garras y ataques mentales</td>
-                <td id="eliminar"><i class="far fa-trash-alt"></i></td>
             </tr>
+
+            -->
         </table>
     </div>
+
+    <div id="divEliminar">
+        <h3>Eliminar fila</h3>
+        <br>
+        <form action="#" id="formEliminar">
+            <label for="">id</label>
+            <input type="text" id="idEliminar">
+            <button type="submit">Eliminar</button>    
+        </form>
+    </div>
+    
+    <footer>
+        Enri Industries &reg;
+    </footer>
 </body>
-<footer>
-    xd
-</footer>
 </html>

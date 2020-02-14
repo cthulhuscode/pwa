@@ -1,5 +1,5 @@
 //Asignar un nombre a la caché
-const CACHE_NAME = 'v1_carrusel';
+const CACHE_NAME = 'v2_carrusel';
 
 //Archivos que se van a cachear
 urlsToCache = [
@@ -15,6 +15,7 @@ urlsToCache = [
     './img/4.jpg',
     './img/5.jpg',
     './img/6.jpg',
+    'https://kit.fontawesome.com/c3e884d364.js'
 ];
 
 //Eventos del ServiceWorker
@@ -38,7 +39,7 @@ self.addEventListener('active', e => {
     const cacheWhiteList = [CACHE_NAME];
 
     //Detectar que archivos han sufrido un cambio
-    e.skipWaiting(
+    e.waitUntill(
         //Ver las llaves de los archivos que han sido modificados
         caches.keys()
         .then(cachesNames => {
@@ -50,7 +51,10 @@ self.addEventListener('active', e => {
             })
         })
         //Indica que se ha terminado de actualizar el caché
-        .then(() => self.ClientRectList.claim())
+        .then(() => self.clients.claim())
+        .catch(error => {
+            console.log('Sucedio un error al actualizar el caché ', error);
+        })
     )
 });
 
