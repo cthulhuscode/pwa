@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
     <!--Etiquetas para optimizar página en móvil-->
     <meta name="theme-color" content="#F0DB4F"> <!--Pintar barra dirección-->
@@ -12,13 +12,15 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="shortcut icon" type="image/png" href="./img/icons/256.png">
-    <link rel="apple-touch-icon" href="./img/icons/256.png">
-    <link rel="apple-touch-startup-image" href="./img/icons/256.png">
+    <link rel="shortcut icon" type="image/png" href="./assets/img/icons/256.png">
+    <link rel="apple-touch-icon" href="./assets/img/icons/256.png">
+    <link rel="apple-touch-startup-image" href="./assets/img/icons/256.png">
     <link rel="manifest" href="./manifest.json">
 
     <!--Estilos-->
-    <script src="main.js"></script>
+
+    <!--<script src="app.js"></script>-->
+    
 
     <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/c3e884d364.js" crossorigin="anonymous"></script>
@@ -26,83 +28,80 @@
     <title>Carrusel de imágenes</title>
 </head>
 <body>
-    <h1>Carrusel de imágenes</h1>
-    <div id="carrusel">
-        <div class="boton" id="next">
-            &#62;
-        </div>
-
-        <div class="boton" id="back">
-            &#60;
-        </div>
-
-        <div id="imagen">
-            <img src="img/1.jpg" id="img">
-        </div>
-    </div>
-
-    <div id="texto">
-        <span>José Enrique Ruvalcaba Segura 4°D</span>
-        <p></p>    
-    </div>   
-
-    <div id="formulario">
-        <h3>Agregar dios lovecraftiano</h3>
-        <br>
-        <form action="#" id="formu">
-            <label for="">id</label>
-            <input type="text" id="codigo" required>
-            <label for="">Nombre</label>
-            <input type="text" id="nombre" required>
-            <label for="">Género</label>
-            <input type="text" id="genero" required>
-            <label for="">Clase</label>
-            <input type="text" id="clase" required>
-            <label for="">Culto</label>
-            <input type="text" id="culto" required>
-            <label for="">Armas</label>
-            <input type="text" id="armas" required>
-            <button type="submit" id="agregar">Agregar</button>        
-        </form>
-    </div>
-
-    <div id="table">
-        <table id="tabla">
-            <caption>Dioses lovecraftianos</caption>
-            <tr>
-                <th>id</th>
-                <th>Nombre</th>
-                <th>Género</th>
-                <th>Clase</th>
-                <th>Culto</th>
-                <th>Armas</th>
-            </tr>
-            <!--
-            <tr>
-                <td>1</td>
-                <td>Cthulhu</td>
-                <td>Masculino</td>
-                <td>Primigenio</td>
-                <td>Humanos (tribus)</td>
-                <td>Tentáculos, garras y ataques mentales</td>
-            </tr>
-
-            -->
-        </table>
-    </div>
-
-    <div id="divEliminar">
-        <h3>Eliminar fila</h3>
-        <br>
-        <form action="#" id="formEliminar">
-            <label for="">id</label>
-            <input type="text" id="idEliminar">
-            <button type="submit">Eliminar</button>    
-        </form>
-    </div>
     
+    <div>
+        <div id="slider">
+            <h1>Slider</h1>
+            <a class="prev" @click="prev" href="#">&#10094; Previous</a>
+            <transition name="fade">
+                <img v-bind:src="this.images[currentIndex]"/>
+            </transition>
+            <a class="next" v-on:click="next" href="#"> Next &#10095;</a>
+            <p>José Enrique Ruvalcaba Segura 4°D | {{images[currentIndex]}}</p>
+        </div>
+    </div>
+
+    <div id="formtabla">
+
+        <div id="formulario">
+            <h3>Agregar dios lovecraftiano</h3>
+            <br>
+            <form action="#" id="formu">
+                <label>id</label>
+                <input type="text" v-model="codigo">
+                <label for="">Nombre</label>
+                <input type="text" v-model="nombre">
+                <label for="">Género</label>
+                <input type="text" v-model="genero">
+                <label for="">Clase</label>
+                <input type="text" v-model="clase" >
+                <label for="">Culto</label>
+                <input type="text" v-model="culto" >
+                <label for="">Armas</label>
+                <input type="text" v-model="armas" >
+                <button type="submit" v-on:click="saveData">Agregar</button>        
+            </form>
+        </div>
+            
+        <div id="table">
+            <table id="tabla">
+                <caption>Dioses lovecraftianos</caption>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Género</th>
+                    <th>Clase</th>
+                    <th>Culto</th>
+                    <th>Armas</th>
+                </tr>
+                <tr v-for="row in data" v-bind:key="row.codigo">
+                    <td>{{row.codigo}}</td>
+                    <td>{{row.nombre}}</td>
+                    <td>{{row.genero}}</td>
+                    <td>{{row.clase}}</td>
+                    <td>{{row.culto}}</td>
+                    <td>{{row.armas}}</td>
+                </tr>
+
+            </table>
+        </div>
+        
+        <div id="divEliminar">
+            <h3>Eliminar fila</h3>
+            <br>
+            <form action="#" id="formEliminar">
+                <label for="">id</label>
+                <input type="text" id="idEliminar" v-model="idEliminar">
+                <button type="submit" v-on:click="deleteRow">Eliminar</button>    
+            </form>
+        </div>
+    
+    </div>
+
     <footer>
         Enri Industries &reg;
     </footer>
+    <script src="./js/vue.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

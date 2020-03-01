@@ -1,0 +1,136 @@
+
+*{
+    margin: 0;
+    font-family: 'Didact Gothic', 'Calibri';
+    text-align: center;
+}
+
+#slider h1{
+    font-style: italic;
+    background-color: black;
+    color: gray;
+}
+
+#slider img {
+  width:100%;
+  max-height: 400px;
+}
+
+#slider .prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 19%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-size: 18px;
+  transition: 0.7s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+#slider .next {
+  right: 0;
+}
+
+#slider .prev {
+  left: 0;
+}
+
+#slider .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+#formulario{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #a5d6a7;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 50%;
+    padding: 20px;
+    padding-right: 40px;
+    box-shadow: 1px 1px 18px #ccc;
+    max-width: 550px;
+}
+
+input[type="text"]{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border-style: none;
+    border: 1px solid darkgray;
+    margin-bottom: 13px;
+    transition: all 200ms;
+}
+
+input[type="text"]:hover{
+    background-color: whitesmoke;
+    border: 1px solid #009624;
+}
+
+button{
+    background-color: #a5d6a7;
+    border: none;
+    padding: 15px;
+    transition: all 300ms;
+    border-radius: 3px;
+}
+
+button:hover{
+    background-color: #75a478;
+}
+
+#table{
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
+table, th, td{
+    margin: 0 auto;
+    font-family: Arial;
+    border: 2px solid #f1f8e9;
+    border-collapse: collapse;
+}
+
+table{
+    margin-top: 50px;
+    width: 80%;
+    box-shadow: 1px 1px 15px #ccc;
+}
+
+th{
+    font-size: 18px;
+    background-color: #00b248    ;
+    padding: 3% 4% 3% 2%;
+    text-align: center;
+    border-color: aliceblue;
+}
+
+td{
+    padding: 1.5% 5px 1.5% 5px;
+}
+
+tr{
+    background-color:#f1f8e9;
+    transition: all 300ms;
+}
+
+tr:hover{
+    background-color: #dcedc8;
+}
+
+/*Eliminar Form */
+
+#divEliminar{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #a5d6a7;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 50%;
+    padding: 20px;
+    padding-right: 40px;
+    box-shadow: 1px 1px 18px #ccc;
+    max-width: 550px;
+}

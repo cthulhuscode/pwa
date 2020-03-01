@@ -6,15 +6,15 @@ urlsToCache = [
     './',
     'style.css',
     'main.js',
-    './img/icons/64.png',
-    './img/icons/256.png',
+    './assets/img/icons/64.png',
+    './assets/img/icons/256.png',
     'index.html',
-    './img/1.jpg',
-    './img/2.jpg',
-    './img/3.jpg',
-    './img/4.jpg',
-    './img/5.jpg',
-    './img/6.jpg',
+    './assets/img/1.jpg',
+    './assets/img/2.jpg',
+    './assets/img/3.jpg',
+    './assets/img/4.jpg',
+    './assets/img/5.jpg',
+    './assets/img/6.jpg',
     'https://kit.fontawesome.com/c3e884d364.js'
 ];
 
@@ -22,16 +22,15 @@ urlsToCache = [
 
 //Intalar, almacenar los activos estáticos del sitio
 self.addEventListener('install', e => {
-    //Esperar hasta que el objeto caché puedar ser abierto
-    e.waitUntill(
-        caches.open(CACHE_NAME)
+    e.waitUntil(
+      caches.open(CACHE_NAME)
         .then(cache => {
-            return cache.addAll(urlsToCache)
+          return cache.addAll(urlsToCache)
             .then(() => self.skipWaiting())
         })
-        .catch(err => console.log('Falló registro de caché', err))
+        .catch(err => console.log('Falló registro de cache', err))
     )
-});
+})
 
 //Permite activar el serviceWorker, hace que funcione sin conexión
 self.addEventListener('active', e => {
