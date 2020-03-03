@@ -69,8 +69,8 @@ const form = new Vue({
             codigo: '',
             nombre: '',
             genero: '',
-            clase: '',
-            culto: '',
+            fecha: '',
+            email: '',
             armas: '',
             data: [1,2],
             idEliminar: null,
@@ -90,8 +90,8 @@ const form = new Vue({
                     codigo: this.codigo,
                     nombre: this.nombre,
                     genero: this.genero,
-                    clase: this.clase,
-                    culto: this.culto,
+                    fecha: this.fecha,
+                    email: this.email,
                     armas: this.armas
                 }
 
@@ -103,8 +103,8 @@ const form = new Vue({
                 this.codigo = null;
                 this.nombre = null;
                 this.genero = null;
-                this.clase = null;
-                this.culto = null;
+                this.fecha = null;
+                this.email = null;
                 this.armas = null;
             }
             else
