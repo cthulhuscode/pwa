@@ -72,20 +72,19 @@ const form = new Vue({
             fecha: '',
             email: '',
             armas: '',
-            data: [],
+            data: []
         };
     },
     mounted(){
-        
+        this.data = this.data || [];
+        if(localStorage.length > 0){
+            this.data = JSON.parse(localStorage.getItem('data'));       
+        }
     },
     methods: {
         saveData(e){
             e.preventDefault();
-            this.data = [];
-            if(localStorage.length > 0){
-                this.data =  JSON.parse(localStorage.getItem('data'));       
-            }
-
+            this.data = this.data || [];
             if(!this.idExists(this.codigo) && this.notEmptyValues()){
                 if(this.tryParseInt(this.codigo, false) != false && this.hasOnlyLetters(this.nombre) && this.hasOnlyLetters(this.genero) && this.hasOnlyLetters(this.armas) && this.isEmailValid(this.email) && this.isDateValid(this.fecha)){
                     let obj = {
@@ -210,6 +209,7 @@ const formEliminar = new Vue({
                 data.splice(this.getIndexNum(this.idEliminar), 1);
                 localStorage.setItem('data', JSON.stringify(data));
                 table.data = data;
+                form.data = data;
                 this.idEliminar = null;
             }
             else 

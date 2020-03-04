@@ -1,5 +1,5 @@
 //Asignar un nombre a la caché
-const CACHE_NAME = 'v2_carrusel';
+const CACHE_NAME = 'v1.1';
 
 //Archivos que se van a cachear
 urlsToCache = [
